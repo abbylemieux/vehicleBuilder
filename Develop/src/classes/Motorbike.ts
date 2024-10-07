@@ -7,21 +7,31 @@ class Motorbike extends Vehicle {
   // Declare properties of the Motorbike class
   // The properties should include vin, color, make, model, year, weight, top speed, and wheels
   // The types should be as follows: vin (string), color (string), make (string), model (string), year (number), weight (number), topSpeed (number), wheels (Wheel[])
-  private vin: string;
-  private color: string;
-  private make: string;
-  private model: string;
-  private year: number;
-  private weight: number;
-  private topSpeed: number;
-  private wheels: Wheel[];
+  vin: string;
+  color: string;
+  make: string;
+  model: string;
+  year: number;
+  weight: number;
+  topSpeed: number;
+  wheels: Wheel[];
 
   // Create a constructor that accepts the properties of the Motorbike class
   // The constructor should call the constructor of the parent class, Vehicle
   // The constructor should initialize the properties of the Motorbike class
   // The constructor should check if the wheels array has 2 elements and create 2 new default Wheel objects if it does not
-  constructor(vin: string, color: string, make: string, model: string, year: number, weight: number, topSpeed: number, wheels: Wheel[]) {
+  constructor(
+    vin: string,
+    color: string,
+    make: string,
+    model: string,
+    year: number,
+    weight: number,
+    topSpeed: number,
+    wheels: Wheel[]
+  ) {
     super();
+    //
     this.vin = vin;
     this.color = color;
     this.make = make;
@@ -29,7 +39,7 @@ class Motorbike extends Vehicle {
     this.year = year;
     this.weight = weight;
     this.topSpeed = topSpeed;
-    this.wheels = wheels.length === 2 ? wheels : [new Wheel(), new Wheel()];
+    this.wheels = [];
   }
 
   // Implement the wheelie method
@@ -42,16 +52,16 @@ class Motorbike extends Vehicle {
   // The method should call the printDetails method of the parent class
   // The method should log the details of the Motorbike
   // The details should include the VIN, make, model, year, weight, top speed, color, and wheels
-  override printDetails() {
-      super.printDetails();
-      console.log(`VIN: ${this.vin}`);
-      console.log(`Make: ${this.make}`);
-      console.log(`Model: ${this.model}`);
-      console.log(`Year: ${this.year}`);
-      console.log(`Weight: ${this.weight}`);
-      console.log(`Top Speed: ${this.topSpeed}`);
-      console.log(`Color: ${this.color}`);
-      console.log(`Wheels: ${this.wheels}`);
+  override printDetails(): void {
+    console.log(`
+      VIN: ${this.vin}
+      Make: ${this.make}
+      Model: ${this.model}
+      Year: ${this.year}
+      Weight: ${this.weight}
+      Top Speed: ${this.topSpeed}
+      Wheels: ${this.wheels};
+    `);
   }
 }
 
